@@ -8,8 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController {}
 
+- (void)wgetURL:(NSString *)url inBackground:(BOOL)background;
+- (NSURL *)returnSafariURL;
+- (IBAction)pressWGetButton:(id)sender;
 
 @end
 

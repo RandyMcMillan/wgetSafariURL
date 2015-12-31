@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		484D9E0F1C34ACE4007FD6FC /* returnSafariURL.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 484D9E0E1C34ACE4007FD6FC /* returnSafariURL.scpt */; };
 		48BBC3651C349BF7004B9EA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BBC3641C349BF7004B9EA1 /* AppDelegate.m */; };
 		48BBC3681C349BF7004B9EA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BBC3671C349BF7004B9EA1 /* main.m */; };
 		48BBC36B1C349BF7004B9EA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BBC36A1C349BF7004B9EA1 /* ViewController.m */; };
@@ -14,6 +15,7 @@
 		48BBC3701C349BF7004B9EA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48BBC36E1C349BF7004B9EA1 /* Main.storyboard */; };
 		48BBC37B1C349BF7004B9EA1 /* wgetSafariURLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BBC37A1C349BF7004B9EA1 /* wgetSafariURLTests.m */; };
 		48BBC3861C349BF7004B9EA1 /* wgetSafariURLUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BBC3851C349BF7004B9EA1 /* wgetSafariURLUITests.m */; };
+		48BBC3941C34A307004B9EA1 /* wgetSafariURL.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 48BBC3931C34A307004B9EA1 /* wgetSafariURL.scpt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		484D9E0E1C34ACE4007FD6FC /* returnSafariURL.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = returnSafariURL.scpt; sourceTree = SOURCE_ROOT; };
 		48BBC3601C349BF7004B9EA1 /* wgetSafariURL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wgetSafariURL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BBC3631C349BF7004B9EA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		48BBC3641C349BF7004B9EA1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		48BBC3811C349BF7004B9EA1 /* wgetSafariURLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wgetSafariURLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BBC3851C349BF7004B9EA1 /* wgetSafariURLUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wgetSafariURLUITests.m; sourceTree = "<group>"; };
 		48BBC3871C349BF7004B9EA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48BBC3931C34A307004B9EA1 /* wgetSafariURL.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = wgetSafariURL.scpt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		48BBC3621C349BF7004B9EA1 /* wgetSafariURL */ = {
 			isa = PBXGroup;
 			children = (
+				48BBC3931C34A307004B9EA1 /* wgetSafariURL.scpt */,
+				484D9E0E1C34ACE4007FD6FC /* returnSafariURL.scpt */,
 				48BBC3631C349BF7004B9EA1 /* AppDelegate.h */,
 				48BBC3641C349BF7004B9EA1 /* AppDelegate.m */,
 				48BBC3691C349BF7004B9EA1 /* ViewController.h */,
@@ -241,7 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				48BBC36D1C349BF7004B9EA1 /* Assets.xcassets in Resources */,
+				484D9E0F1C34ACE4007FD6FC /* returnSafariURL.scpt in Resources */,
 				48BBC3701C349BF7004B9EA1 /* Main.storyboard in Resources */,
+				48BBC3941C34A307004B9EA1 /* wgetSafariURL.scpt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +497,7 @@
 				48BBC38C1C349BF7004B9EA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48BBC38D1C349BF7004B9EA1 /* Build configuration list for PBXNativeTarget "wgetSafariURLTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +506,7 @@
 				48BBC38F1C349BF7004B9EA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48BBC3901C349BF7004B9EA1 /* Build configuration list for PBXNativeTarget "wgetSafariURLUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +515,7 @@
 				48BBC3921C349BF7004B9EA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
