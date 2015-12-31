@@ -33,62 +33,30 @@
 }
 
 -(IBAction)displayURL:(id)sender {
-   
     
-        NSLog(@"%@", NSStringFromSelector(_cmd));
-    
-    
-    NSDictionary *error = nil;
-    
-    NSMutableString *scriptText =
-    [NSMutableString stringWithString:@"tell application 'System Events' to set frontApp to name of first process whose frontmost is true\n"];
-    
-        [scriptText appendString:@""];
-        [scriptText appendString:@""];
-        [scriptText appendString:@""];
-        [scriptText appendString:@""];
-        [scriptText appendString:@""];
-        [scriptText appendString:@""];
-    
-    [scriptText appendString:@"if (frontApp = 'Safari') or (frontApp = 'Webkit') then\n"];
-    [scriptText appendString:@"using terms from application 'Safari'\n "];
-    [scriptText appendString:@"tell application frontApp to set currentTabUrl to URL of front document\n"];
-    [scriptText appendString:@"tell application frontApp to set currentTabTitle to name of front document"];
-    [scriptText appendString:@"end using terms from"];
-    [scriptText appendString:@"else if (frontApp = 'Google Chrome') or (frontApp = 'Google Chrome Canary') or (frontApp = 'Chromium') then"];
-    [scriptText appendString:@"using terms from application 'Google Chrome'"];
-    [scriptText appendString:@"tell application frontApp to set currentTabUrl to URL of active tab of front window"];
-    [scriptText appendString:@"tell application frontApp to set currentTabTitle to title of active tab of front window"];
-    [scriptText appendString:@"end using terms from"];
-    [scriptText appendString:@"else"];
-    [scriptText appendString:@"return 'You need a supported browser as your frontmost app'"];
-    [scriptText appendString:@"end if"];
-    
-    
-    
-    
-    [scriptText appendString:@"return currentTabUrl & '"];
-    [scriptText appendString:@"' & currentTabTitle"];
-    [scriptText appendString:@""];
  
-    NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptText];
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSString		*path			= [[NSBundle mainBundle] pathForResource:@"returnSafariURL" ofType:@"scpt"];
+    NSURL			*url			= [NSURL fileURLWithPath:path]; NSDictionary *errors = [NSDictionary dictionary];
+    NSAppleScript	*appleScript	= [[NSAppleScript alloc] initWithContentsOfURL:url error:&errors];
+    NSAppleEventDescriptor *result = [appleScript executeAndReturnError:&errors];
     
-    NSAppleEventDescriptor *result = [script executeAndReturnError:&error];
+    NSDictionary *errorDict = nil;
+
+    if (errorDict) {
+        NSLog(@"Error: %@", errorDict);
+        return;
+    }
     
     NSLog(@"result == %@", result);
     
     DescType descriptorType = [result descriptorType];
     
     NSLog(@"descriptorType == %@", NSFileTypeForHFSTypeCode(descriptorType));
-    
+   
+    NSLog(@"%@",[result stringValue]);
     // returns a double
     
-    NSData *data = [result data];
-    double currentPosition = 0;
-    
-    [data getBytes:&currentPosition length:[data length]];
-    
-    NSLog(@"currentPosition == %f", currentPosition);
 }
 
 
