@@ -80,7 +80,7 @@
 - (void)wgetURL:(NSString *)url inBackground:(BOOL)background {
     
     NSLog(@"%@", NSStringFromSelector(_cmd));
-    //[self openAppleScript:(NSString *)@"wgetSafariURL"];
+    [self openAppleScript:(NSString *)@"wgetSafariURL"];
     if (background) {
         
     } else {
@@ -91,7 +91,7 @@
 - (IBAction)pressWGetButton:(id)sender {
 
     NSLog(@"%@", NSStringFromSelector(_cmd));
-    [self wgetURL:nil inBackground:FALSE];
+    [self wgetURL:[self.urlTextField stringValue] inBackground:FALSE];
 }
 
 #pragma mark ViewController openAppleScript
