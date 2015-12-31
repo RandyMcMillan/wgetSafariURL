@@ -9,10 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ViewController : NSViewController {
-
-
-    IBOutlet NSTextField *urlTextField;
-
+	IBOutlet NSTextField *urlTextField;
 }
 
 - (void)wgetURL:(NSString *)url inBackground:(BOOL)background;
@@ -20,9 +17,6 @@
 - (IBAction)pressWGetButton:(id)sender;
 - (IBAction)displayURL:(id)sender;
 
-
-@property (nonatomic, readwrite) NSTextField        *urlTextField;
-
+@property (nonatomic, readwrite) NSTextField *urlTextField;
 
 @end
-
