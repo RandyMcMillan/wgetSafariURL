@@ -42,6 +42,14 @@
     
     NSMutableString *scriptText =
     [NSMutableString stringWithString:@"tell application 'System Events' to set frontApp to name of first process whose frontmost is true\n"];
+    
+        [scriptText appendString:@""];
+        [scriptText appendString:@""];
+        [scriptText appendString:@""];
+        [scriptText appendString:@""];
+        [scriptText appendString:@""];
+        [scriptText appendString:@""];
+    
     [scriptText appendString:@"if (frontApp = 'Safari') or (frontApp = 'Webkit') then\n"];
     [scriptText appendString:@"using terms from application 'Safari'\n "];
     [scriptText appendString:@"tell application frontApp to set currentTabUrl to URL of front document\n"];
@@ -55,6 +63,10 @@
     [scriptText appendString:@"else"];
     [scriptText appendString:@"return 'You need a supported browser as your frontmost app'"];
     [scriptText appendString:@"end if"];
+    
+    
+    
+    
     [scriptText appendString:@"return currentTabUrl & '"];
     [scriptText appendString:@"' & currentTabTitle"];
     [scriptText appendString:@""];
