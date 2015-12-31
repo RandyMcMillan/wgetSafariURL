@@ -10,6 +10,8 @@
 
 @implementation ViewController
 
+@synthesize urlTextField;
+
 - (void)viewDidLoad {
     
     NSLog(@"%@", NSStringFromSelector(_cmd));
@@ -56,6 +58,9 @@
    
     NSLog(@"%@",[result stringValue]);
     // returns a double
+    
+    [self.urlTextField setStringValue:[result stringValue]];
+    
     
 }
 
