@@ -11,6 +11,8 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
     [super viewDidLoad];
     [self returnSafariURL];
 
@@ -23,6 +25,7 @@
 
 
 - (NSURL *)returnSafariURL {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 
 
     [self openAppleScript:(NSString *)@"returnSafariURL"];
@@ -34,6 +37,9 @@
 
 
 - (void)setRepresentedObject:(id)representedObject {
+   
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
@@ -45,6 +51,9 @@
 - (void)wgetURL:(NSString *)url inBackground:(BOOL)background
 {
     
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
     //[self openAppleScript:(NSString *)@"wgetSafariURL"];
     
     
@@ -60,6 +69,9 @@
 
 - (IBAction)pressWGetButton:(id)sender {
 
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
     [self wgetURL:nil inBackground:FALSE];
 
 }
@@ -68,6 +80,9 @@
 
 - (void)openAppleScript:(NSString *)scriptName
 {
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
     NSLog(@"%@", NSStringFromSelector(_cmd));
     NSString		*path			= [[NSBundle mainBundle] pathForResource:scriptName ofType:@"scpt"];
     NSURL			*url			= [NSURL fileURLWithPath:path]; NSDictionary *errors = [NSDictionary dictionary];
