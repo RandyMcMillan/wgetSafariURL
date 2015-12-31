@@ -48,11 +48,11 @@
         return;
     }
     
-    NSLog(@"result == %@", result);
+    //NSLog(@"result == %@", result);
     
-    DescType descriptorType = [result descriptorType];
+    //DescType descriptorType = [result descriptorType];
     
-    NSLog(@"descriptorType == %@", NSFileTypeForHFSTypeCode(descriptorType));
+    //NSLog(@"descriptorType == %@", NSFileTypeForHFSTypeCode(descriptorType));
    
     NSLog(@"%@",[result stringValue]);
     // returns a double

@@ -8,12 +8,21 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController {}
+@interface ViewController : NSViewController {
+
+
+    IBOutlet NSTextField *urlTextField;
+
+}
 
 - (void)wgetURL:(NSString *)url inBackground:(BOOL)background;
 - (NSURL *)returnSafariURL;
 - (IBAction)pressWGetButton:(id)sender;
--(IBAction)displayURL:(id)sender;
+- (IBAction)displayURL:(id)sender;
+
+
+@property (nonatomic, readwrite) NSTextField        *urlTextField;
+
 
 @end
 
