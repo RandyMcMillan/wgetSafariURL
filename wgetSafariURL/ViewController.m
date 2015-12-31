@@ -12,98 +12,85 @@
 
 @synthesize urlTextField;
 
-- (void)viewDidLoad {
-    
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    [super viewDidLoad];
-    [self returnSafariURL];
-    // Do any additional setup after loading the view.
-
+- (void)viewDidLoad
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	[super viewDidLoad];
+	[self returnSafariURL];
+	// Do any additional setup after loading the view.
 }
 
+- (NSURL *)returnSafariURL
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
-- (NSURL *)returnSafariURL {
-    
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSURL *url;
 
-    NSURL *url;
-    
-    [self displayURL:self];
-    
-    
-    return url;
+	[self displayURL:self];
+
+	return url;
 }
 
--(IBAction)displayURL:(id)sender {
-    
- 
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSString		*path			= [[NSBundle mainBundle] pathForResource:@"returnSafariURL" ofType:@"scpt"];
-    NSURL			*url			= [NSURL fileURLWithPath:path]; NSDictionary *errors = [NSDictionary dictionary];
-    NSAppleScript	*appleScript	= [[NSAppleScript alloc] initWithContentsOfURL:url error:&errors];
-    NSAppleEventDescriptor *result = [appleScript executeAndReturnError:&errors];
-    
-    NSDictionary *errorDict = nil;
+- (IBAction)displayURL:(id)sender
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSString				*path			= [[NSBundle mainBundle] pathForResource:@"returnSafariURL" ofType:@"scpt"];
+	NSURL					*url			= [NSURL fileURLWithPath:path]; NSDictionary *errors = [NSDictionary dictionary];
+	NSAppleScript			*appleScript	= [[NSAppleScript alloc] initWithContentsOfURL:url error:&errors];
+	NSAppleEventDescriptor	*result			= [appleScript executeAndReturnError:&errors];
 
-    if (errorDict) {
-        NSLog(@"Error: %@", errorDict);
-        return;
-    }
-    
-    //NSLog(@"result == %@", result);
-    
-    //DescType descriptorType = [result descriptorType];
-    
-    //NSLog(@"descriptorType == %@", NSFileTypeForHFSTypeCode(descriptorType));
-   
-    NSLog(@"%@",[result stringValue]);
-    // returns a double
-    
-    [self.urlTextField setStringValue:[result stringValue]];
-    
-    
+	NSDictionary *errorDict = nil;
+
+	if (errorDict) {
+		NSLog(@"Error: %@", errorDict);
+		return;
+	}
+
+	// NSLog(@"result == %@", result);
+
+	// DescType descriptorType = [result descriptorType];
+
+	// NSLog(@"descriptorType == %@", NSFileTypeForHFSTypeCode(descriptorType));
+
+	NSLog(@"%@", [result stringValue]);
+	// returns a double
+
+	[self.urlTextField setStringValue:[result stringValue]];
 }
 
-
-
-
-- (void)setRepresentedObject:(id)representedObject {
-   
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    [super setRepresentedObject:representedObject];
-    // Update the view, if already loaded.
+- (void)setRepresentedObject:(id)representedObject
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	[super setRepresentedObject:representedObject];
+	// Update the view, if already loaded.
 }
 
 #pragma mark ViewController openURL
 
 // Opens a URL in the default browser in background or foreground
-- (void)wgetURL:(NSString *)url inBackground:(BOOL)background {
-    
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    [self openAppleScript:(NSString *)@"wgetSafariURL"];
-    if (background) {
-        
-    } else {
-        
-    }
+- (void)wgetURL:(NSString *)url inBackground:(BOOL)background
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	[self openAppleScript:(NSString *)@"wgetSafariURL"];
+
+	if (background) {} else {}
 }
 
-- (IBAction)pressWGetButton:(id)sender {
-
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    [self wgetURL:[self.urlTextField stringValue] inBackground:FALSE];
+- (IBAction)pressWGetButton:(id)sender
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	[self wgetURL:[self.urlTextField stringValue] inBackground:FALSE];
 }
 
 #pragma mark ViewController openAppleScript
 
-- (void)openAppleScript:(NSString *)scriptName {
-
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSString		*path			= [[NSBundle mainBundle] pathForResource:scriptName ofType:@"scpt"];
-    NSURL			*url			= [NSURL fileURLWithPath:path]; NSDictionary *errors = [NSDictionary dictionary];
-    NSAppleScript	*appleScript	= [[NSAppleScript alloc] initWithContentsOfURL:url error:&errors];
-    [appleScript executeAndReturnError:nil];
+- (void)openAppleScript:(NSString *)scriptName
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSString		*path			= [[NSBundle mainBundle] pathForResource:scriptName ofType:@"scpt"];
+	NSURL			*url			= [NSURL fileURLWithPath:path]; NSDictionary *errors = [NSDictionary dictionary];
+	NSAppleScript	*appleScript	= [[NSAppleScript alloc] initWithContentsOfURL:url error:&errors];
+	[appleScript executeAndReturnError:nil];
 }
-
 
 @end
