@@ -13,6 +13,7 @@
 - (void)wgetURL:(NSString *)url inBackground:(BOOL)background;
 - (NSURL *)returnSafariURL;
 - (IBAction)pressWGetButton:(id)sender;
+-(IBAction)displayURL:(id)sender;
 
 @end
 

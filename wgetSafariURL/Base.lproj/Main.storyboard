@@ -680,7 +680,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="pressWGetButton:" target="XfG-lQ-9wD" id="OUE-Gh-acs"/>
+                                    <action selector="displayURL:" target="XfG-lQ-9wD" id="8Vt-O1-W24"/>
                                 </connections>
                             </button>
                         </subviews>
