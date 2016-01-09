@@ -8,6 +8,8 @@
 	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>wgetSafariURL</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>net.randymcmillan.wgetSafariURL</string>
 	<key>CFBundleInfoDictionaryVersion</key>
