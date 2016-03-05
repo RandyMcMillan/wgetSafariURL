@@ -1,1 +1,4 @@
 wget --limit-rate=400k --no-clobber --convert-links --restrict-file-names=windows --random-wait -r -p -E -e robots=off -U mozilla MYWEBSITE
+
+
+wget -r -l7 -p -k --no-clobber http://THEWEBSITE.com
