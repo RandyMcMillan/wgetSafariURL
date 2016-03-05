@@ -15,19 +15,27 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
     
-    	NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"%@", NSStringFromSelector(_cmd));
     
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
     
-    	NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"%@", NSStringFromSelector(_cmd));
     
 }
 
+- (void)applicationDidBecomeActive:(NSNotification *)notification {
+
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
+}
+- (void)applicationDidResignActive:(NSNotification *)notification {
+
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
+}
 
 
 @end

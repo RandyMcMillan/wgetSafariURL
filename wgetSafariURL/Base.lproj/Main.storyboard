@@ -695,6 +695,7 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="theview" destination="m2S-Jp-Qdl" id="nhH-VI-oqZ"/>
                         <outlet property="urlTextField" destination="vzT-LO-XCg" id="b1r-E1-KG1"/>
                     </connections>
                 </viewController>

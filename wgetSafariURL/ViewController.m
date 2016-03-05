@@ -10,7 +10,7 @@
 
 @implementation ViewController
 
-@synthesize urlTextField;
+@synthesize urlTextField,theView;
 
 - (void)viewDidLoad
 {
