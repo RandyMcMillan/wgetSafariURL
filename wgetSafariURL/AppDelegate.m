@@ -16,10 +16,18 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    
+    	NSLog(@"%@", NSStringFromSelector(_cmd));
+    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+    
+    	NSLog(@"%@", NSStringFromSelector(_cmd));
+    
 }
+
+
 
 @end

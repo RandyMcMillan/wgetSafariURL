@@ -18,5 +18,7 @@
 - (IBAction)displayURL:(id)sender;
 
 @property (nonatomic, readwrite) NSTextField *urlTextField;
+//REf:https://forums.developer.apple.com/thread/12118
+@property(nonatomic,strong)NSDocument* document;
 
 @end

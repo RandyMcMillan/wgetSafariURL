@@ -20,6 +20,26 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear{
+//REf:https://forums.developer.apple.com/thread/12118
+    
+    self.document = [self.view.window.windowController document];
+
+}
+
+-(void)viewDidAppear
+{
+    
+    //REf:https://forums.developer.apple.com/thread/12118
+    [super viewDidAppear];
+    NSView* view = self.view;
+    NSWindow* window = view.window;
+    NSWindowController* wc = window.windowController;
+    NSDocument* doc = wc.document;
+    self.representedObject = doc;
+}
+
+
 - (NSURL *)returnSafariURL
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
